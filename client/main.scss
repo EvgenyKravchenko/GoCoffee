@@ -1,0 +1,22 @@
+
+#main-flex-container {
+  display: flex;
+  margin: 20px;
+
+  #notificator-flex-container {
+    margin: 0 30px;
+    flex-grow: 1;
+  }
+
+  #chat-flex-container {
+    flex-grow: 6;
+  }
+}
+
+.message-from, .login-go {
+  font-weight: bold;
+}
+
+.modal {
+  display: block;
+}

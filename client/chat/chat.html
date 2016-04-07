@@ -1,0 +1,28 @@
+<template name="chat">
+    <div id="chat" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Chat</h3>
+        </div>
+        <div class="panel-body">
+            <form id="chatForm">
+                <div class="form-group label-floating">
+                    <input class="form-control" id="chatInput" name="chatMessage" type="text">
+                </div>
+            </form>
+            {{#each messages}}
+                {{> message}}
+            {{/each}}
+        </div>
+    </div>
+
+</template>
+
+<template name="message">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <span class="message-from">{{from}} ({{formattedTime}}):</span>
+            <span class="message-text">{{text}}</span>
+        </div>
+    </div>
+
+</template>
