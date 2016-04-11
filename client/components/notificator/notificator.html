@@ -7,7 +7,7 @@
             <form id="notificatorForm">
                 <div class="form-group label-floating">
                     <label class="control-label" for="notificationInput">Send notification</label>
-                    <input class="form-control" id="notificationInput" name="notification" type="text">
+                    <input {{disableIfNotLoggedIn}} class="form-control" id="notificationInput" name="notification" type="text" autocomplete="off">
                 </div>
             </form>
         </div>

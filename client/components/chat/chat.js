@@ -1,6 +1,8 @@
 import moment from 'moment';
 
-import {Messages} from '../../collections/collections';
+import {Messages} from '../../../collections/collections';
+
+window.messagesChat = Messages;
 
 Template.chat.helpers({
   messages: Messages.find({}, {sort: {time: -1}})
@@ -16,7 +18,7 @@ Template.chat.events = {
     target.chatMessage.value = '';
 
     Messages.insert({
-      from: 'MyName',
+      from: Session.get('login'),
       time: Date.now(),
       text: text
     });
@@ -25,7 +27,10 @@ Template.chat.events = {
 
 
 Template.message.helpers({
-  formattedTime: function () {
+  formattedTime() {
     return moment(this.time).fromNow();
+  },
+  oldMessagesStyle() {
+    return moment(this.time).isBefore(moment().subtract(10, 'minutes')) ? 'old-message' : '';
   }
 });

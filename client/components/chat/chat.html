@@ -6,7 +6,13 @@
         <div class="panel-body">
             <form id="chatForm">
                 <div class="form-group label-floating">
-                    <input class="form-control" id="chatInput" name="chatMessage" type="text">
+                    <input
+                        {{disableIfNotLoggedIn}}
+                        class="form-control"
+                        id="chatInput"
+                        name="chatMessage"
+                        type="text"
+                        autocomplete="off">
                 </div>
             </form>
             {{#each messages}}
@@ -19,10 +25,9 @@
 
 <template name="message">
     <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body {{oldMessagesStyle}}">
             <span class="message-from">{{from}} ({{formattedTime}}):</span>
             <span class="message-text">{{text}}</span>
         </div>
     </div>
-
 </template>

@@ -1,0 +1,22 @@
+#notificator-flex-container {
+    max-width: 300px;
+}
+
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .user {
+        margin: 0 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+}

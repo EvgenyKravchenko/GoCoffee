@@ -1,4 +1,4 @@
-import {Notifications, Messages} from '../../collections/collections';
+import {Notifications, Messages} from '../../../collections/collections';
 
 export class Notification {
   constructor() {
@@ -7,20 +7,30 @@ export class Notification {
     this.askPermissions();
   }
 
-  showNotification(text) {
-    new this._Notification(text);
+  showNotification(message) {
+    const notification = new this._Notification(message.from, {
+      body: message.text
+    });
+
+    notification.onclick = function () {
+      event.preventDefault();
+      window.open('http://localhost:3000', '_blank');
+    }
+
   }
 
   sendNotification(text) {
+    let userName = Meteor.user().profile.name;
+
     Notifications.insert({
       time: Date.now(),
-      from: 'My name',
+      from: userName,
       text: text
     });
 
     Messages.insert({
       time: Date.now(),
-      from: 'My name',
+      from: userName,
       text: text
     });
   }

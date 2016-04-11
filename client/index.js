@@ -1,3 +1,5 @@
-Template.index.helpers = {
-  currentName: !!Session.get('login')
-};
+Template.index.helpers({
+  currentName: function() {
+    return Session.get('login');
+  }
+});

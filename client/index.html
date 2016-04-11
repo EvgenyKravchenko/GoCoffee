@@ -8,10 +8,9 @@
 </body>
 
 <template name="index">
-    {{#unless currentName}}
-        {{> greeting }}
-    {{/unless}}
-
+    <div id="animation-container">
+        {{> atForm }}
+    </div>
     {{> main }}
 </template>
 

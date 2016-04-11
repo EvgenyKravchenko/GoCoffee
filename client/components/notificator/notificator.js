@@ -1,4 +1,4 @@
-import {Notification} from '../notification/Notification';
+import {Notification} from '../../services/notification/Notification';
 
 Template.notificator.onCreated(function() {
   this.Notification = new Notification;
@@ -13,11 +13,6 @@ Template.notificator.events = {
 
     target.notification.value = '';
 
-    console.log('submitted request: ', text);
-
-
-    instance.Notification.showNotification(text);
     instance.Notification.sendNotification(text);
   }
 };
-
