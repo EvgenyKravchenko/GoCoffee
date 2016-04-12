@@ -1,15 +1,31 @@
-
 #main-flex-container {
   display: flex;
-  margin: 20px;
+  margin: 10px;
+  flex-direction: column;
+}
 
-  #notificator-flex-container {
-    margin: 0 30px;
-    flex-grow: 1;
+#chat-flex-container {
+  flex-grow: 2;
+}
+
+@media screen and (min-width: 700px) {
+  #main-flex-container {
+    flex-direction: row;
   }
 
-  #chat-flex-container {
-    flex-grow: 6;
+  #notificator-flex-container {
+    min-width: 300px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #main-flex-container {
+    justify-content: space-around;
+  }
+
+  #notificator-flex-container, #chat-flex-container {
+    margin: 10px 40px;
   }
 }
 
@@ -21,24 +37,9 @@
   display: block;
 }
 
-
 .at-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-//#animation-container {
-//  transition: opacity 2s ease-out;
-//  opacity: 0;
-//  height: 0;
-//  overflow: hidden;
-//}
-//
-//#animation-container {
-//  &.active {
-//    height: auto;
-//    opacity: 1;
-//  }
-//}
