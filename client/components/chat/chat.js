@@ -18,7 +18,7 @@ Template.chat.events = {
     target.chatMessage.value = '';
 
     Messages.insert({
-      from: Session.get('login'),
+      from: Meteor.user().profile.name,
       time: Date.now(),
       text: text
     });
